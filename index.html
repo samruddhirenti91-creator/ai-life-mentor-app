@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LifeMentor AI</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#6a11cb,#2575fc);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+    text-align:center;
+}
+
+.container{
+    background: rgba(255,255,255,0.1);
+    padding:40px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    width:320px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+button{
+    background:white;
+    color:#2575fc;
+    border:none;
+    padding:12px 25px;
+    font-size:16px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#f1f1f1;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1>LifeMentor AI</h1>
+
+    <p>Your personal AI mentor that helps plan your goals, track progress, and maintain a balanced lifestyle.</p>
+
+    <button onclick="startSetup()">Start Setup</button>
+</div>
+
+<script>
+function startSetup(){
+    window.location.href = "setup.html";
+}
+</script>
+
+</body>
+</html>

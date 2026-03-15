@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Roadmap</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(135deg,#6a11cb,#2575fc);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background: rgba(255,255,255,0.1);
+padding:30px;
+border-radius:15px;
+width:380px;
+backdrop-filter: blur(10px);
+}
+
+h2{
+text-align:center;
+}
+
+.schedule{
+margin-top:20px;
+line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Your AI Daily Plan</h2>
+
+<div id="goalDisplay"></div>
+
+<div class="schedule">
+
+<p>🌅 7:00 – Wake up</p>
+<p>🍳 7:30 – Breakfast</p>
+<p>🏫 9:00 – 4:00 College</p>
+<p>🍛 4:30 – Lunch / Rest</p>
+<p>📚 6:00 – Study Session</p>
+<p>🍽 7:30 – Dinner</p>
+<p>🎨 8:00 – Hobby / Relax</p>
+<p>📖 9:30 – Revision</p>
+<p>😴 10:30 – Sleep</p>
+
+</div>
+
+</div>
+
+<script>
+
+let goal = localStorage.getItem("userGoal");
+
+document.getElementById("goalDisplay").innerHTML =
+"<p><strong>Your Goal:</strong> " + goal + "</p>";
+
+</script>
+
+</body>
+</html>

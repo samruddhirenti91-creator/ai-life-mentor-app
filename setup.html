@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup - LifeMentor AI</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#2575fc,#6a11cb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+.container{
+    background: rgba(255,255,255,0.1);
+    padding:35px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    width:350px;
+}
+
+h2{
+    text-align:center;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border-radius:8px;
+    border:none;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:25px;
+    background:white;
+    color:#2575fc;
+    font-size:16px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Setup Your Life Plan</h2>
+
+<label>Upload College Timetable</label>
+<input type="file" id="timetable">
+
+<label>Enter Your Goal</label>
+<input type="text" id="goal" placeholder="Example: Learn AIML">
+
+<label>Sleep Time</label>
+<input type="time" id="sleep">
+
+<label>Wake Up Time</label>
+<input type="time" id="wake">
+
+<button onclick="submitData()">Generate AI Plan</button>
+
+</div>
+
+<script>
+function submitData(){
+
+let goal = document.getElementById("goal").value;
+
+localStorage.setItem("userGoal", goal);
+
+window.location.href = "roadmap.html";
+
+}
+</script>
+
+</body>
+</html>
