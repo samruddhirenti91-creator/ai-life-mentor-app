@@ -35,6 +35,19 @@ margin-top:20px;
 line-height:1.8;
 }
 
+.progress{
+margin-top:20px;
+text-align:center;
+}
+
+.progress button{
+margin:5px;
+padding:10px 15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -47,6 +60,15 @@ line-height:1.8;
 <div id="goalDisplay"></div>
 
 <div class="schedule">
+<div class="progress">
+<h3>Daily Check</h3>
+<p>Did you complete today's study session?</p>
+
+<button onclick="completed()">Yes ✅</button>
+<button onclick="notCompleted()">No ❌</button>
+
+<p id="response"></p>
+</div>
 
 <p>🌅 7:00 – Wake up</p>
 <p>🍳 7:30 – Breakfast</p>
@@ -68,6 +90,48 @@ let goal = localStorage.getItem("userGoal");
 
 document.getElementById("goalDisplay").innerHTML =
 "<p><strong>Your Goal:</strong> " + goal + "</p>";
+
+let schedule = "";
+
+if(goal.toLowerCase().includes("data")){
+schedule = `
+<p>🌅 7:00 – Wake up</p>
+<p>🍳 7:30 – Breakfast</p>
+<p>🏫 9:00 – 4:00 College</p>
+<p>🍛 4:30 – Lunch / Rest</p>
+<p>💻 5:30 – Learn Python for Data Science</p>
+<p>📊 6:30 – Practice Data Analysis</p>
+<p>🍽 7:30 – Dinner</p>
+<p>🧠 8:00 – Machine Learning Study</p>
+<p>📖 9:00 – Revision</p>
+<p>😴 10:30 – Sleep</p>
+`;
+}
+else{
+schedule = `
+<p>🌅 7:00 – Wake up</p>
+<p>🍳 7:30 – Breakfast</p>
+<p>🏫 9:00 – 4:00 College</p>
+<p>🍛 4:30 – Lunch / Rest</p>
+<p>📚 6:00 – Study Session</p>
+<p>🍽 7:30 – Dinner</p>
+<p>🎨 8:00 – Hobby</p>
+<p>📖 9:30 – Revision</p>
+<p>😴 10:30 – Sleep</p>
+`;
+}
+
+document.querySelector(".schedule").innerHTML = schedule;
+
+function completed(){
+document.getElementById("response").innerHTML =
+"🎉 Great job! Keep going. Tomorrow we will continue your learning.";
+}
+
+function notCompleted(){
+document.getElementById("response").innerHTML =
+"⚠ It's okay. I will schedule extra practice tomorrow. Don't give up!";
+}
 
 </script>
 
